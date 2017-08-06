@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itcast.mybatis.dao.IUser">
+	<select id="queryUserByUserName" parameterType="String" resultType="user">
+		SELECT * FROM tb_user WHERE user_name = #{userName}
+	</select>
+	
+	<insert id="saveUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO tb_user (
+			id,
+			user_name,
+			password,
+			name,
+			age,
+			sex,
+			birthday,
+			created,
+			updated
+		)
+		VALUES
+			(
+				NULL,
+				#{userName},
+				#{password},
+				#{name},
+				#{age},
+				#{sex},
+				#{birthday},
+				NOW(),
+				NOW()
+			);
+	</insert>
+	
+	<update id="updateUser" parameterType="cn.itcast.mybatis.pojo.User">
+		UPDATE tb_user
+		SET
+		 password = #{password},
+		 name = #{name},
+		 age = #{age},
+		 sex = #{sex},
+		 birthday = #{birthday},
+		 updated = NOW()
+		WHERE
+			id = #{id};
+	</update>
+	
+	<delete id="deleteUserById" parameterType="Long">
+		DELETE FROM tb_user WHERE id = #{id}
+	</delete>
+</mapper>

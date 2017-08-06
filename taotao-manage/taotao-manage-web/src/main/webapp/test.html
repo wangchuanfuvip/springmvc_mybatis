@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="http://manage.taotao.com/js/jquery-easyui-1.4.1/jquery.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	$(function(){
+		$.get("http://manage.taotao.com/js/test.json",function(data){
+			alert(data.key);
+		});
+	});
+</script>
+</body>
+</html>

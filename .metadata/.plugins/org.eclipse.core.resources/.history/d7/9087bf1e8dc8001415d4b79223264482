@@ -1,0 +1,30 @@
+package com.taotao.search.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.taotao.common.spring.exetend.PropertyConfig;
+
+@Component
+public class RabbitItemService {
+
+    @Autowired
+    private SearchService searchService;
+
+    @Autowired
+    private ApiService apiService;
+
+    @PropertyConfig
+    private String MANAGE_TAOTAO;
+
+    public void insertItem(Long itemId) {
+
+    }
+
+    public void updateItem(Long itemId) {
+        String url = MANAGE_TAOTAO + "/item/query/" + itemId;
+        String jsonData = this.apiService.doGet(url);
+        this.searchService.update(item);
+    }
+
+}

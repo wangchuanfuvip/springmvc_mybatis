@@ -1,0 +1,5 @@
+rabbit.ip=50
+rabbit.port=50
+rabbit.username=50
+rabbit.password=50
+rabbit.vhost=50

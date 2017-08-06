@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardArchetypePage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="issueManagementUrl">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="E:\0129\workspace\itcast-springmvc"/>
+			<item value="E:\0129\itcast-parent"/>
+			<item value="E:\0129\workspace\itcast-mybatis-day02"/>
+			<item value="E:\0129\workspace\itcast-mybatis"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="groupId">
+		</list>
+		<list key="package">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.wizards.MavenProjectSelectionDialog">
+		<item value="450" key="height"/>
+		<item value="480" key="width"/>
+		<item value="55" key="y"/>
+		<item value="358" key="x"/>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="E:\0129\workspace\itcast-rabbitmq"/>
+			<item value="E:\0129\workspace\itcast-solrj"/>
+			<item value="E:\0129\workspace\itcast-jd-crawler"/>
+			<item value="E:\0129\workspace\itcast-quartz"/>
+			<item value="E:\0129\workspace\taotao-order"/>
+			<item value="E:\0129\workspace\itcast-redis"/>
+			<item value="E:\0129\workspace\itcast-httpclient"/>
+			<item value="E:\0129\workspace\taotao-manage"/>
+			<item value="E:\0129\workspace\itcast-springmvc"/>
+			<item value="E:\电商项目\课堂资料\day03\代码\itcast-springmvc"/>
+			<item value="E:\0129\itcast-parent"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="MavenModuleWizardParentPage">
+		<list key="moduleName">
+			<item value="taotao-manage-web"/>
+			<item value="taotao-manage-service"/>
+			<item value="taotao-manage-mapper"/>
+			<item value="taotao-manage-pojo"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="com.taotao.cart"/>
+			<item value="com.taotao.search"/>
+			<item value="my.test"/>
+			<item value="cn.itcast.jd"/>
+			<item value="cn.itcast.lucene"/>
+			<item value="com.taotao.sso"/>
+			<item value="com.taotao.web"/>
+			<item value="com.taotao.test"/>
+			<item value="com.taotao.manage"/>
+			<item value="com.taotao.common"/>
+			<item value="com.taotao.parent"/>
+			<item value="cn.itcast.springmvc"/>
+			<item value="cn.itcast.mybatis"/>
+			<item value="cn.itcast.mapper"/>
+			<item value="cn.itcast.usermanage"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="taotao-cart"/>
+			<item value="taotao-search"/>
+			<item value="my-test"/>
+			<item value="itcast-jd"/>
+			<item value="itcast-lucene"/>
+			<item value="taotao-sso"/>
+			<item value="taotao-web"/>
+			<item value="taotao-mapper-test"/>
+			<item value="taotao-manage-web"/>
+			<item value="taotao-manage"/>
+			<item value="taotao-manage-service"/>
+			<item value="taotao-manage-mapper"/>
+			<item value="taotao-manage-pojo"/>
+			<item value="taotao-common"/>
+			<item value="taotao-parent"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+		<list key="version">
+			<item value="1.0.0-SNAPSHOT"/>
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,50 @@
+package com.taotao.web.service;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.taotao.common.spring.exetend.PropertyConfig;
+import com.taotao.web.pojo.Item;
+import com.taotao.web.pojo.User;
+
+@Service
+public class CartService {
+
+    @Autowired
+    private ItemService itemService;
+
+    @Autowired
+    private ApiService apiService;
+
+    @PropertyConfig
+    private String CART_TAOTAO;
+
+    public void addItemToCart(User user, Long itemId) {
+        // 通过商品id查询商品数据
+        Item item = this.itemService.queryItemById(itemId);
+        // 调用购物车系统的API添加商品
+        String url = CART_TAOTAO + "/cart/save";
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("userId", String.valueOf(user.getId()));
+        params.put("itemId", String.valueOf(itemId));
+        params.put("itemTitle", item.getTitle());
+        String[] images = item.getImages();
+        if (null == images) {
+            params.put("itemImage", "");
+        } else {
+            params.put("itemImage", images[0]);
+        }
+        params.put("itemPrice", String.valueOf(item.getPrice()));
+        params.put("num", "1");// 默认为：1
+        try {
+            String jsonData = this.apiService.doPost(url, params);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+}

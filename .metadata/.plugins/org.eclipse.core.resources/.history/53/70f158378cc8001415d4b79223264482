@@ -1,0 +1,12 @@
+package com.taotao.search.service;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class RabbitItemService {
+    
+    public void insert(Long id){
+        
+    }
+
+}

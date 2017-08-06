@@ -1,0 +1,16 @@
+package com.taotao.cart.mapper;
+
+import com.taotao.cart.pojo.Cart;
+
+public interface CartMapper {
+
+    /**
+     * 根据用户名id和商品id查询购物车数据
+     * 
+     * @param userId
+     * @param itemId
+     * @return
+     */
+    Cart queryCartByUserIdAndItemId(Long userId, Long itemId);
+
+}

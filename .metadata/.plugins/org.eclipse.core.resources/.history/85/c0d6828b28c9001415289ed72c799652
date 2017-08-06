@@ -1,0 +1,23 @@
+package com.taotao.cart.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.taotao.cart.mapper.CartMapper;
+import com.taotao.cart.pojo.Cart;
+import com.taotao.common.vo.TaotaoResult;
+
+@Service
+public class CartService {
+
+    @Autowired
+    private CartMapper cartMapper;
+
+    public TaotaoResult saveItem(Cart cart) {
+        //判断商品是否存在购物车中，如果存在，数量+1
+        
+        this.cartMapper.save(cart);
+        return null;
+    }
+
+}

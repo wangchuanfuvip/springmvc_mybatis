@@ -1,0 +1,24 @@
+package com.taotao.search.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class RabbitItemService {
+
+    @Autowired
+    private SearchService searchService;
+
+    @Autowired
+    private ApiService apiService;
+
+    public void insertItem(Long itemId) {
+
+    }
+
+    public void updateItem(Long itemId) {
+        
+        this.searchService.update(item);
+    }
+
+}

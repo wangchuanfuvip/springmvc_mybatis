@@ -1,0 +1,30 @@
+package com.taotao.cart.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.taotao.cart.pojo.Cart;
+import com.taotao.cart.service.CartService;
+import com.taotao.common.vo.TaotaoResult;
+
+/**
+ * 购物车相关API
+ * 
+ */
+@RequestMapping(value = "cart")
+@Controller
+public class CartController {
+
+    @Autowired
+    private CartService cartService;
+
+    @RequestMapping(value = "save", method = RequestMethod.POST)
+    @ResponseBody
+    public TaotaoResult saveItem(Cart cart) {
+        this.cartService.saveItem(cart);
+    }
+
+}

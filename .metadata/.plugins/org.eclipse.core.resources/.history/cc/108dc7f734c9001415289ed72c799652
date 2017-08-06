@@ -1,0 +1,63 @@
+package com.taotao.web.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.taotao.web.pojo.Cart;
+import com.taotao.web.pojo.User;
+import com.taotao.web.service.CartService;
+import com.taotao.web.threadlocal.UserThreadLocal;
+
+@RequestMapping(value = "cart")
+@Controller
+public class CartController {
+
+    @Autowired
+    private CartService cartService;
+
+    @RequestMapping("add/{itemId}")
+    public String addItemToCart(@PathVariable("itemId") Long itemId) {
+        // 判断用户是否登录
+        User user = UserThreadLocal.get();
+        if (user == null) {
+            // 未登录，将商品数据保存到cookie中
+        } else {
+            // 登录，将商品数据保存到数据库中
+            this.cartService.addItemToCart(user, itemId);
+        }
+        return "redirect:/cart/show.html";
+    }
+
+    @RequestMapping("show")
+    public ModelAndView showCart() {
+        ModelAndView mv = new ModelAndView("cart");
+        User user = UserThreadLocal.get();
+        List<Cart> carts = null;
+        if (user == null) {
+            // 未登录，从cookie中查询商品
+        } else {
+            // 登录，从api查询商品
+            carts = this.cartService.queryCartByUser(user);
+        }
+        mv.addObject("cartList", carts);
+        return mv;
+    }
+
+    @RequestMapping("delete/{itemId}")
+    public String deleteCart(@PathVariable("itemId") Long itemId) {
+        User user = UserThreadLocal.get();
+        if (user == null) {
+            // 未登录，从cookie中查询商品
+        } else {
+            // 登录，从api查询商品
+            this.cartService.deleteCart(user);
+        }
+        return "redirect:/cart/show.html";
+    }
+
+}

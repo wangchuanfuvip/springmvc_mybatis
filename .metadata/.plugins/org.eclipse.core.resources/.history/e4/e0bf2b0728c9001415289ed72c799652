@@ -1,0 +1,21 @@
+package com.taotao.cart.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.taotao.common.vo.TaotaoResult;
+
+/**
+ * 购物车相关API
+ * 
+ */
+@RequestMapping(value = "cart")
+@Controller
+public class CartController {
+
+    
+    public TaotaoResult saveItem() {
+
+    }
+
+}

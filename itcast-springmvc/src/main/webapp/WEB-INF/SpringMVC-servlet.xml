@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 定义HandlerMapping -->
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+	
+	<!-- 定义适配器 -->
+	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+	
+	<!-- 配置推荐使用的注解的HandlerMapping -->
+	<!-- <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/> -->
+	
+	<!-- 配置推荐使用的HandlerAdapter -->
+	<!-- <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/> -->
+	
+	<!-- 注解驱动 -->
+	<!-- <mvc:annotation-driven/> -->
+	
+	<!-- 
+		配置扫描器，使得@Controller注解生效
+	 -->
+	<!-- <context:component-scan base-package="cn.itcast.springmvc.controller"/> -->
+	
+	<!-- 定义Handler对象 -->
+	<bean name="/hello.do" class="cn.itcast.springmvc.controller.HelloController"/>
+	
+	
+	<!-- 定义视图解析器 -->
+	<!-- 
+		prefix="/WEB-INF/jsp/", suffix=".jsp", viewname="test" -> "/WEB-INF/jsp/test.jsp" 
+	 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- 前缀 -->
+		<property name="prefix" value="/WEB-INF/views/"/>
+		<!-- 后缀 -->
+		<property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<!-- 定义文件上传解析器 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 设定默认编码 -->
+		<property name="defaultEncoding" value="UTF-8"></property>
+		<!-- 设定文件上传的最大值5MB，5*1024*1024 -->
+		<property name="maxUploadSize" value="5242880"></property>
+	</bean>
+	
+	<!-- 定义拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<!-- 所有请求 -->
+			<mvc:mapping path="/**"/>
+			<bean class="cn.itcast.springmvc.interceptor.MyHandlerInterceptor"/>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<!-- 所有请求 -->
+			<mvc:mapping path="/**"/>
+			<bean class="cn.itcast.springmvc.interceptor.My2HandlerInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+</beans>
